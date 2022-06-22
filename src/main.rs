@@ -1,8 +1,10 @@
-use ears::{Sound, AudioController};
+use ears::{AudioController, Sound};
 
 fn main() {
     let mut sound = Sound::new("./samples/sample.wav").unwrap();
-    sound.play();
+    loop {
+        sound.play();
 
-    while sound.is_playing() {}
+        while sound.is_playing() {}
+    }
 }
