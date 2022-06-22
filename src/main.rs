@@ -1,10 +1,10 @@
-use ears::{AudioController, Sound};
+use ears::{AudioController, Music};
 
 fn main() {
-    let mut sound = Sound::new("./samples/sample.wav").unwrap();
+    let mut music = Music::new("./samples/sample.m4a").unwrap();
     loop {
-        sound.play();
-
-        while sound.is_playing() {}
+        let tags = music.get_tags();
+        println!("{}", tags);
+        music.play();
     }
 }
